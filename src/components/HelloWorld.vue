@@ -1,101 +1,24 @@
 <template>
-  <div class="hello">
-    <el-row>
-      <el-col :span="24">
-        <div class="grid-content bg-purple-dark"></div>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col :span="12">
-        <div class="grid-content bg-purple"></div>
-      </el-col>
-      <el-col :span="12">
-        <div class="grid-content bg-purple-light"></div>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col :span="8">
-        <div class="grid-content bg-purple"></div>
-      </el-col>
-      <el-col :span="8">
-        <div class="grid-content bg-purple-light"></div>
-      </el-col>
-      <el-col :span="8">
-        <div class="grid-content bg-purple"></div>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col :span="6">
-        <div class="grid-content bg-purple"></div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content bg-purple-light"></div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content bg-purple"></div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content bg-purple-light"></div>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col :span="4">
-        <div class="grid-content bg-purple"></div>
-      </el-col>
-      <el-col :span="4">
-        <div class="grid-content bg-purple-light"></div>
-      </el-col>
-      <el-col :span="4">
-        <div class="grid-content bg-purple"></div>
-      </el-col>
-      <el-col :span="4">
-        <div class="grid-content bg-purple-light"></div>
-      </el-col>
-      <el-col :span="4">
-        <div class="grid-content bg-purple"></div>
-      </el-col>
-      <el-col :span="4">
-        <div class="grid-content bg-purple-light"></div>
-      </el-col>
-    </el-row>
+  <div class="hello-world">
+    <el-container style="height: 500px; border: 1px solid #eee">
+      <my-aside></my-aside>
+      <el-container direction="vertical">
+        <my-header></my-header>
+        <my-main></my-main>
+      </el-container>
+    </el-container>
   </div>
 </template>
 
 <script>
+  import MyHeader from './MyHeader.vue'
+  import MyAside from './MyAside.vue'
+  import MyMain from './MyMain.vue'
   export default {
     name: 'HelloWorld',
-    props: {
-      msg: String
-    }
+    components: { MyAside, MyHeader, MyMain }
   }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-  .el-row {
-    margin-bottom: 20px;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  .el-col {
-    border-radius: 4px;
-  }
-  .bg-purple-dark {
-    background: #99a9bf;
-  }
-  .bg-purple {
-    background: #d3dce6;
-  }
-  .bg-purple-light {
-    background: #e5e9f2;
-  }
-  .grid-content {
-    border-radius: 4px;
-    min-height: 36px;
-  }
-  .row-bg {
-    padding: 10px 0;
-    background-color: #f9fafc;
-  }
+<style lang="css" scoped>
 </style>
