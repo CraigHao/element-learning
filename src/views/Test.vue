@@ -63,11 +63,29 @@
       <el-button type="primary" icon="el-icon-edit"></el-button>
       <el-button type="primary" icon="el-icon-share"></el-button>
       <el-button type="primary" icon="el-icon-delete" :loading="true"></el-button>
+      <el-input-number
+        v-model="num"
+        @change="handleChange"
+        :min="1"
+        :max="10"
+        label="描述文字"
+      ></el-input-number>
     </el-button-group>
   </div>
 </template>
 <script>
-  export default {}
+  export default {
+    data() {
+      return {
+        num: 1
+      }
+    },
+    methods: {
+      handleChange(value) {
+        console.log(value)
+      }
+    }
+  }
 </script>
 <style scoped>
   .el-row {
